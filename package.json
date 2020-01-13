@@ -1,0 +1,41 @@
+{
+  "name": "@gencer/actions-postmark-deploy",
+  "version": "0.0.1",
+  "description": "Send an Email on deployment through Postmark",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gencer/actions-postmark-deploy.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "postmark",
+    "deploy",
+    "notify"
+  ],
+  "author": "Gencer W. Genç <gencer@nienbo.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gencer/actions-postmark-deploy/issues"
+  },
+  "homepage": "https://github.com/gencer/actions-postmark-deploy#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "postmark": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "husky": "^3.0.5",
+    "typescript": "^3.6.3"
+  },
+  "husky": {
+    "skipCI": true,
+    "hooks": {
+      "post-commit": "npm prune --production && git add node_modules/* && git commit -m \"chore: update node_modules\" && npm install"
+    }
+  }
+}

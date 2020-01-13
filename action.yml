@@ -1,0 +1,22 @@
+name: 'Postmark Deploy Notifier'
+author: 'Gencer W. Genç'
+description: 'Send an Email on deployment via Postmark app'
+inputs:
+  from:
+    description: 'Sender e-mail address.'
+    required: true
+  to:
+    description: 'Recipient addresses separated by comma'
+    required: true
+  message:
+    description: 'Additional message. (Optional)'
+    required: false
+  POSTMARK_TOKEN:
+    description: 'Postmark API Token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/main.js'
+branding:
+  color: 'orange'
+  icon: 'message-circle'
